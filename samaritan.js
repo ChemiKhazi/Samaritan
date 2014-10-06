@@ -50,7 +50,6 @@ $(document).ready(function(){
     // URL Fullscreen
     if (getUrlParameter('fullscreen') !== undefined)
     {
-        urlMsg = urlMsg.split('%20').join(' ').split('%22').join('');
         setTimeout(function(){
             if (screenfull.enabled && !screenfull.isFullscreen) {
             screenfull.request();
