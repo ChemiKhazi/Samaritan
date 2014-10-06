@@ -46,6 +46,17 @@ $(document).ready(function(){
         urlMsg = urlMsg.split('%20').join(' ').split('%22').join('');
         setTimeout(function(){executeSamaritan(urlMsg);}, $State.wordTime);
     }
+    
+    // URL Fullscreen
+    if (getUrlParameter('fullscreen') !== undefined)
+    {
+        urlMsg = urlMsg.split('%20').join(' ').split('%22').join('');
+        setTimeout(function(){
+            if (screenfull.enabled && !screenfull.isFullscreen) {
+            screenfull.request();
+            }
+        }, $State.wordTime);
+    }
 
     // Pull up the phrase list file
     $.ajax({
