@@ -50,6 +50,16 @@ $(document).ready(function(){
         $State.phraselist = [urlMsg];
         setTimeout(function(){executeSamaritan(urlMsg);}, $State.wordTime);
     }
+    
+    // URL Fullscreen
+    if (getUrlParameter('fullscreen') !== undefined)
+    {
+        setTimeout(function(){
+            if (screenfull.enabled && !screenfull.isFullscreen) {
+            screenfull.request();
+            }
+        }, $State.wordTime);
+    }
 
     // Pull up the phrase list file
     $.ajax({
